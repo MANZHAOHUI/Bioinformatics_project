@@ -1,7 +1,8 @@
-nucleotides = ['A', 'C', 'G', 'T']
+from structures import *
 
 
 def validateSeq(dna_seq):
+    '''Checks if DNA Sequence has the correct letters '''
     temsep = dna_seq.upper()
     for nuc in temsep:
         if nuc not in nucleotides:
@@ -14,3 +15,11 @@ def countNucFrequency(seq):
     for nuc in seq:
         temFreqDict[nuc] += 1
     return temFreqDict
+
+
+def transcription(seq):
+    return seq.replace('T', 'U')
+
+
+def reverse_complement(seq):
+    return ''.join([DNA_reverse_complement[nuc] for nuc in seq])[::-1]
