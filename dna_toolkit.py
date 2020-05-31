@@ -23,3 +23,15 @@ def transcription(seq):
 
 def reverse_complement(seq):
     return ''.join([DNA_reverse_complement[nuc] for nuc in seq])[::-1]
+
+
+def gc_content(seq):
+    return round((seq.count('C') + seq.count('G')) / len(seq) * 100)
+
+
+def gc_content_subsec(seq, k=20):
+    res = []
+    for i in range(0, len(seq) - k + 1, k):
+        subseq = seq[i:i + k]
+        res.append(gc_content(subseq))
+    return res
