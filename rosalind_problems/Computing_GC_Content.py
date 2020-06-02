@@ -4,7 +4,7 @@ def read_file(file):
 
 
 def gc_content(seq):
-    return round((seq.count('C') + seq.count('G')) / len(seq) * 100)
+    return round((seq.count('C') + seq.count('G')) / len(seq) * 100, 6)
 
 
 FASTAFile = read_file("test_data\gc_content_ex.txt")
